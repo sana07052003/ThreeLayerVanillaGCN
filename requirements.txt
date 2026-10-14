@@ -1,0 +1,9 @@
+numpy>=1.24
+matplotlib>=3.7
+networkx>=3.0
+reportlab>=4.0     # only for building the PDF report
+pillow
+scipy>=1.10
+scikit-learn>=1.2   # t-SNE figure only
+# optional, only for src/gcn_torch.py and tests/test_torch_matches_numpy.py
+torch>=2.0

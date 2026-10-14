@@ -1,0 +1,33 @@
+W1[6, 10]  analytic=-5.074030e-04  numeric=-5.074030e-04  rel.err=2.31e-08
+W1[4, 4]  analytic= 2.038843e-02  numeric= 2.038843e-02  rel.err=3.06e-10
+W1[2, 0]  analytic= 1.512807e-02  numeric= 1.512807e-02  rel.err=3.40e-10
+W1[0, 0]  analytic=-4.369965e-02  numeric=-4.369965e-02  rel.err=1.05e-10
+W1[1, 13]  analytic= 4.990426e-01  numeric= 4.990426e-01  rel.err=1.60e-11
+W2[10, 7]  analytic= 1.565200e-02  numeric= 1.565200e-02  rel.err=3.90e-10
+W2[8, 4]  analytic=-9.664345e-02  numeric=-9.664345e-02  rel.err=1.38e-11
+W2[15, 5]  analytic= 4.332014e-03  numeric= 4.332014e-03  rel.err=1.51e-10
+W2[10, 4]  analytic=-6.601607e-03  numeric=-6.601607e-03  rel.err=9.00e-10
+W2[8, 7]  analytic= 3.475159e-02  numeric= 3.475159e-02  rel.err=2.95e-11
+W3[2, 2]  analytic= 2.587547e-01  numeric= 2.587547e-01  rel.err=3.66e-11
+W3[5, 0]  analytic=-1.374142e-01  numeric=-1.374142e-01  rel.err=8.00e-12
+W3[3, 2]  analytic= 5.061666e-02  numeric= 5.061666e-02  rel.err=5.23e-11
+W3[4, 0]  analytic=-6.805449e-02  numeric=-6.805449e-02  rel.err=9.34e-11
+W3[6, 2]  analytic= 7.454477e-02  numeric= 7.454477e-02  rel.err=5.54e-11
+b1[0, 13]  analytic= 3.039323e-01  numeric= 3.039323e-01  rel.err=1.78e-11
+b1[0, 2]  analytic=-9.082068e-03  numeric=-9.082068e-03  rel.err=5.97e-10
+b1[0, 1]  analytic= 6.411588e-02  numeric= 6.411588e-02  rel.err=1.04e-10
+b1[0, 13]  analytic= 3.039323e-01  numeric= 3.039323e-01  rel.err=1.78e-11
+b1[0, 0]  analytic= 2.757940e-02  numeric= 2.757940e-02  rel.err=1.79e-11
+b2[0, 4]  analytic=-2.054822e-01  numeric=-2.054822e-01  rel.err=1.03e-12
+b2[0, 0]  analytic= 0.000000e+00  numeric= 0.000000e+00  rel.err=0.00e+00
+b2[0, 2]  analytic= 1.626999e-01  numeric= 1.626999e-01  rel.err=3.58e-11
+b2[0, 3]  analytic= 3.092287e-01  numeric= 3.092287e-01  rel.err=4.24e-11
+b2[0, 3]  analytic= 3.092287e-01  numeric= 3.092287e-01  rel.err=4.24e-11
+b3[0, 1]  analytic=-1.574855e-01  numeric=-1.574855e-01  rel.err=6.92e-12
+b3[0, 0]  analytic=-6.246704e-02  numeric=-6.246704e-02  rel.err=9.12e-11
+b3[0, 0]  analytic=-6.246704e-02  numeric=-6.246704e-02  rel.err=9.12e-11
+b3[0, 0]  analytic=-6.246704e-02  numeric=-6.246704e-02  rel.err=9.12e-11
+b3[0, 0]  analytic=-6.246704e-02  numeric=-6.246704e-02  rel.err=9.12e-11
+
+Worst relative error over 30 checked entries: 2.31e-08
+GRADIENT CHECK PASSED

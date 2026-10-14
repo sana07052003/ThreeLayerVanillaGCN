@@ -1,0 +1,39 @@
+Cora: nodes=2708 undirected edges=5278 features=1433 classes=7
+split train/val/test = 140/500/1000  | trainable parameters = 94,087
+class counts: [351, 217, 418, 818, 426, 298, 180] | test class counts: [130, 91, 144, 319, 149, 103, 64]
+homophily = 0.810   mean degree = 3.90
+config: {'hidden': (64, 32), 'epochs': 200, 'lr': 0.01, 'dropout': 0.5, 'wd': 0.0005, 'select': 'val_loss'}
+------------------------------------------------------------------------------
+[GCN] seed  42 | best epoch  99 | val loss 0.6838 | test loss 0.5985 | test acc 0.8160 | macro-F1 0.8008 | 38s
+[MLP] seed  42 | best epoch  50 | val loss 1.3254 | test loss 1.3354 | test acc 0.5420 | macro-F1 0.5256 | 32s
+[GCN] seed 123 | best epoch  81 | val loss 0.7181 | test loss 0.6116 | test acc 0.8290 | macro-F1 0.8117 | 40s
+[MLP] seed 123 | best epoch  47 | val loss 1.3590 | test loss 1.3336 | test acc 0.5310 | macro-F1 0.5156 | 32s
+[GCN] seed 456 | best epoch  56 | val loss 0.6558 | test loss 0.5665 | test acc 0.8220 | macro-F1 0.8091 | 37s
+[MLP] seed 456 | best epoch  39 | val loss 1.5034 | test loss 1.4530 | test acc 0.5180 | macro-F1 0.5027 | 33s
+[GCN] seed   7 | best epoch  58 | val loss 0.6716 | test loss 0.6126 | test acc 0.8130 | macro-F1 0.8029 | 38s
+[MLP] seed   7 | best epoch  94 | val loss 1.2953 | test loss 1.3356 | test acc 0.5680 | macro-F1 0.5543 | 32s
+[GCN] seed   8 | best epoch  79 | val loss 0.6583 | test loss 0.5912 | test acc 0.8250 | macro-F1 0.8133 | 36s
+[MLP] seed   8 | best epoch  44 | val loss 1.3100 | test loss 1.3079 | test acc 0.5730 | macro-F1 0.5556 | 31s
+[GCN] seed   9 | best epoch 137 | val loss 0.7140 | test loss 0.5992 | test acc 0.8200 | macro-F1 0.8082 | 37s
+[MLP] seed   9 | best epoch  55 | val loss 1.3711 | test loss 1.3685 | test acc 0.5310 | macro-F1 0.5155 | 30s
+[GCN] seed  10 | best epoch  58 | val loss 0.6805 | test loss 0.5902 | test acc 0.8140 | macro-F1 0.8082 | 38s
+[MLP] seed  10 | best epoch  66 | val loss 1.3976 | test loss 1.3583 | test acc 0.5350 | macro-F1 0.5219 | 31s
+[GCN] seed  11 | best epoch  98 | val loss 0.6718 | test loss 0.6154 | test acc 0.8030 | macro-F1 0.7913 | 37s
+[MLP] seed  11 | best epoch  45 | val loss 1.3639 | test loss 1.3453 | test acc 0.5320 | macro-F1 0.5155 | 29s
+[GCN] seed  12 | best epoch  95 | val loss 0.6561 | test loss 0.6171 | test acc 0.8060 | macro-F1 0.7918 | 38s
+[MLP] seed  12 | best epoch  78 | val loss 1.3151 | test loss 1.3510 | test acc 0.5610 | macro-F1 0.5489 | 32s
+[GCN] seed  13 | best epoch 127 | val loss 0.6703 | test loss 0.6299 | test acc 0.8120 | macro-F1 0.8014 | 37s
+[MLP] seed  13 | best epoch  49 | val loss 1.2944 | test loss 1.2642 | test acc 0.5680 | macro-F1 0.5475 | 31s
+------------------------------------------------------------------------------
+MLP acc: 0.5459 ± 0.0197 | macro_precision: 0.5264 ± 0.0202 | macro_recall: 0.5538 ± 0.0140 | macro_f1: 0.5303 ± 0.0193 | test_loss: 1.3453 ± 0.0479 | best_val_loss: 1.3535 ± 0.0632
+GCN acc: 0.8160 ± 0.0082 | macro_precision: 0.7991 ± 0.0071 | macro_recall: 0.8129 ± 0.0109 | macro_f1: 0.8039 ± 0.0077 | test_loss: 0.6032 ± 0.0180 | best_val_loss: 0.6780 ± 0.0222
+
+Seed 42 GCN confusion matrix (rows actual, cols predicted):
+ [[ 93   5   2  11   8   8   3]
+ [  3  74   5   6   0   3   0]
+ [  1   5 130   8   0   0   0]
+ [ 10   6   6 269  19   6   3]
+ [ 13   2   0  11 118   4   1]
+ [  4   2   4   2   0  86   5]
+ [ 10   0   0   1   0   7  46]]
+GCN per-class F1 (seed 42): [0.705, 0.8, 0.893, 0.858, 0.803, 0.793, 0.754]
