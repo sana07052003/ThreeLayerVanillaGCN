@@ -1,0 +1,68 @@
+name: Run GCN experiments
+
+# Manual trigger: GitHub repo -> Actions tab -> "Run GCN experiments" -> Run workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-dejavu-core
+          pip install numpy scipy matplotlib networkx scikit-learn reportlab pillow
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: 0. Create output folders
+        run: mkdir -p outputs/figures docs
+
+      - name: 1. Fixed-weight demo (no training)
+        run: python src/demo_fixed_weights.py | tee outputs/fixed_demo_output.txt
+
+      - name: 2. Gradient check (hand-derived backprop vs finite differences)
+        run: python tests/gradient_check.py | tee outputs/gradient_check_output.txt
+
+      - name: 2b. Two-layer gradient check
+        run: python tests/gradient_check_two_layer.py | tee outputs/gradient_check_two_layer_output.txt
+
+      - name: 2c. Two-layer examples (fixed weights + Karate Club)
+        run: python src/run_two_layer_example.py | tee outputs/two_layer_example_output.txt
+
+      - name: 3. PyTorch == NumPy equivalence test
+        continue-on-error: true      # a failure here is shown as a warning, other steps still run
+        run: python tests/test_torch_matches_numpy.py
+
+      - name: 4. Main experiment - Cora, 10 seeds (about 12-15 min)
+        run: python src/run_cora.py | tee outputs/cora_output.txt
+
+      - name: 5. PyTorch GCN on Cora (seed 42)
+        continue-on-error: true
+        run: python src/gcn_torch.py | tee outputs/torch_output.txt
+
+      - name: 5b. Small synthetic-graph run (supplementary, needed by figure script)
+        run: python src/run_training.py | tee outputs/training_output.txt
+
+      - name: 6. Figures and PDF report
+        run: |
+          python src/make_figures.py
+          python src/make_cora_figures.py
+          python src/make_two_layer_figures.py
+          python src/build_report.py
+          python src/build_two_layer_doc.py
+          python src/build_assignment_doc.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcn-results
+          path: |
+            outputs/
+            docs/
